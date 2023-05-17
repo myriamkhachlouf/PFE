@@ -3,13 +3,16 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes =[
   {
-    path: '',
-    redirectTo: 'typography',
-    pathMatch: 'full',
-  }, {
+    path: 'login',
+    component: LoginComponent, // Login page without the layout component
+  },
+ 
+ 
+   {
     path: '',
     component: AdminLayoutComponent,
     children: [
@@ -17,10 +20,7 @@ const routes: Routes =[
       path: '',
       loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(x => x.AdminLayoutModule)
   }]},
-  {
-    path: '**',
-    redirectTo: 'Login'
-  }
+  
 ];
 
 

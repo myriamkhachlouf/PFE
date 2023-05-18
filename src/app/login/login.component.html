@@ -2,11 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>HTML5 Login Form with validation Example</title>
+  <title>Sign in</title>
+
+  <style>
+    /* Add custom styles for the image */
+    #login-image {
+      width: 200px; /* Adjust the width as needed */
+      height: auto; /* Maintain aspect ratio */
+      margin-bottom: 1px; /* Add some spacing below the image */
+    }
+    
+    body {
+      overflow: hidden;
+    }
+  </style>
+
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <div id="login-form-wrap">
+  <img id="login-image" src="\assets\img\dicrm__1_-removebg-preview.png" alt="Login Image">
   <h2>Sign in</h2>
   <form id="login-form" (submit)="login()">
     <p>
@@ -22,11 +37,11 @@
         <i class="validation"><span></span><span></span></i>
       </p>
     <p>
-      <input type="submit" id="login" value="Submit">
+      <input type="submit" id="login" value="Submit">  
     </p>
   </form>
   <div id="create-account-wrap">
-    <p>Not a member? <a href="#">Check our TechTeam</a></p>
+    <p>Not a member? <a href="https://www.vermeg.com/fr/contactez-nous/">Check our TechTeam</a></p>
   </div><!--create-account-wrap-->
 </div><!--login-form-wrap-->
 <!-- partial -->

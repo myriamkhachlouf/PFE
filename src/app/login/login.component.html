@@ -17,34 +17,50 @@
     }
   </style>
 
+  <!-- Add reCAPTCHA script -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6Ld-IBsmAAAAAJuvC4nyQYesf8484kE9nrDmyUgG" async defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('login-form');
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6Ld-IBsmAAAAAJuvC4nyQYesf8484kE9nrDmyUgG', { action: 'login' }).then(function(token) {
+            document.getElementById('recaptchaToken').value = token;
+            document.getElementById('login-form').submit();
+          });
+        });
+      });
+    });
+  </script>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div id="login-form-wrap">
-  <img id="login-image" src="\assets\img\dicrm__1_-removebg-preview.png" alt="Login Image">
-  <h2>Sign in</h2>
-  <form id="login-form" (submit)="login()">
-    <p>
-      <input type="text" id="username" name="username" placeholder="Username" [(ngModel)]="username" required>
-      <i class="validation"><span></span><span></span></i>
-    </p>
-    <p>
-      <input type="email" id="email" name="email" placeholder="Email Address" [(ngModel)]="email" required>
-      <i class="validation"><span></span><span></span></i>
-    </p>
-    <p>
-        <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="password" required>
+  <div id="login-form-wrap">
+    <img id="login-image" src="/assets/img/dicrm__1_-removebg-preview.png" alt="Login Image">
+    <h2>Sign in</h2>
+    <form id="login-form" (ngSubmit)="handleFormSubmit($event)">
+      <p>
+        <input type="text" id="username" name="username" placeholder="Username" required [(ngModel)]="username">
         <i class="validation"><span></span><span></span></i>
       </p>
-    <p>
-      <input type="submit" id="login" value="Submit">  
-    </p>
-  </form>
-  <div id="create-account-wrap">
-    <p>Not a member? <a href="https://www.vermeg.com/fr/contactez-nous/">Check our TechTeam</a></p>
-  </div><!--create-account-wrap-->
-</div><!--login-form-wrap-->
-<!-- partial -->
+      <p>
+        <input type="email" id="email" name="email" placeholder="Email Address" required [(ngModel)]="email">
+        <i class="validation"><span></span><span></span></i>
+      </p>
+      <p>
+        <input type="password" id="password" name="password" placeholder="Password" required [(ngModel)]="password">
+        <i class="validation"><span></span><span></span></i>
+      </p>
+      <input type="hidden" id="recaptchaToken" name="recaptchaToken">
+      <p>
+        <input type="submit" id="login" value="Submit">  
+      </p>
+    </form>
+    <div id="create-account-wrap">
+      <p>Not a member? <a href="https://www.vermeg.com/fr/contactez-nous/">Check our TechTeam</a></p>
+    </div><!--create-account-wrap-->
+  </div><!--login-form-wrap-->
 
 </body>
 </html>

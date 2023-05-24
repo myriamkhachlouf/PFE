@@ -1,18 +1,23 @@
 .sidebar-toggle {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 999;
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  .sidebar-toggle {
+    display: none;
   }
-  
-  @media (min-width: 768px) {
-    .sidebar-toggle {
-      display: none;
-    }
-  }
-  
+}

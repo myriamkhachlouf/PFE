@@ -11,7 +11,7 @@ export class MapsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() : void {
-    var divElement = document.getElementById('viz1684433599452');
+    var divElement = document.getElementById('viz1685022505364');
     var vizElement = divElement.getElementsByTagName('object')[0];
     if (divElement.offsetWidth > 800) {
       vizElement.style.width = '1200px';

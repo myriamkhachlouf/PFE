@@ -13,6 +13,9 @@ import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { MonitaryComponent } from './monitary/monitary.component';
+import { DealsComponent } from './deals/deals.component';
 
 
 @NgModule({
@@ -30,7 +33,9 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
-
+    EmployeeComponent,
+    MonitaryComponent,
+    DealsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

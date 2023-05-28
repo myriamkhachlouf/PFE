@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-icons',
-  templateUrl: './icons.component.html',
-  styleUrls: ['./icons.component.css']
+  selector: 'app-monitary',
+  templateUrl: './monitary.component.html',
+  styleUrls: ['./monitary.component.scss']
 })
-export class IconsComponent implements OnInit {
+export class MonitaryComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    var divElement = document.getElementById('viz1685186449369');
+  ngOnInit(): void {
+    var divElement = document.getElementById('viz1685293456332');
     var vizElement = divElement.getElementsByTagName('object')[0];
     if (divElement.offsetWidth > 800) {
       vizElement.style.width = '1200px';
@@ -26,5 +26,6 @@ export class IconsComponent implements OnInit {
     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
     vizElement.parentNode.insertBefore(scriptElement, vizElement);
   }
+  }
 
-}
+

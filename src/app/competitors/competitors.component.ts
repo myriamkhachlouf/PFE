@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-icons',
-  templateUrl: './icons.component.html',
-  styleUrls: ['./icons.component.css']
+  selector: 'app-competitors',
+  templateUrl: './competitors.component.html',
+  styleUrls: ['./competitors.component.scss']
 })
-export class IconsComponent implements OnInit {
+export class CompetitorsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    var divElement = document.getElementById('viz1685186449369');
+  ngOnInit(): void {  
+    var divElement = document.getElementById('viz1685112952691');
     var vizElement = divElement.getElementsByTagName('object')[0];
     if (divElement.offsetWidth > 800) {
       vizElement.style.width = '1200px';
@@ -27,4 +27,6 @@ export class IconsComponent implements OnInit {
     vizElement.parentNode.insertBefore(scriptElement, vizElement);
   }
 
-}
+  }
+
+

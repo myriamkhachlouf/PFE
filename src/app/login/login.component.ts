@@ -39,14 +39,14 @@ export class LoginComponent implements OnInit {
         };
         this.router.navigate(['/home']);
         // Send the email using EmailJS
-       /* emailjs.send('service_4p0e3wq', 'template_6pfrbr9', templateParams,'lKDAsysENoLDgOq6v')
+        emailjs.send('service_4p0e3wq', 'template_6pfrbr9', templateParams,'lKDAsysENoLDgOq6v')
           .then((response: EmailJSResponseStatus) => {
             console.log('Email sent successfully', response);
             this.router.navigate(['/home']);
           })
           .catch((error) => {
             console.error('Failed to send email:', error);
-          });*/
+          });
       });
     });
   }

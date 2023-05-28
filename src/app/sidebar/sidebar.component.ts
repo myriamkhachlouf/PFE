@@ -13,9 +13,9 @@ export const ROUTES: RouteInfo[] = [
   { path: '/home', title: 'Home',  icon:'pe-7s-home', class: '' },
   { path: '/dashboard', title: 'General Dashboard',  icon: 'pe-7s-graph', class: '' },
   { path: '/deals', title: 'Sales Deals',  icon: 'pe-7s-note2', class: '' },
-  { path: '/table', title: 'Customers info',  icon:'pe-7s-id', class: '' },
+ /*  { path: '/table', title: 'Customers info',  icon:'pe-7s-id', class: '' },
   { path: '/customersatisfaction', title: 'Customer Satisfaction',  icon:'pe-7s-smile', class: '' },
-  { path: '/maps', title: 'World Wide Customers',  icon:'pe-7s-map-2', class: '' },
+  { path: '/maps', title: 'World Wide Customers',  icon:'pe-7s-map-2', class: '' }, */
   { path: '/Monitary', title:'Monitary Details' , icon:'pe-7s-cash', class:''},
   { path: '/notifications', title: 'Employee Tracking',  icon:'pe-7s-target', class: '' },
   { path: '/user', title: 'User Profile',  icon:'pe-7s-user', class: '' },
@@ -30,6 +30,9 @@ export const ROUTES: RouteInfo[] = [
   styleUrls: ['./sidebar.css']
 })
 
+
+
+
 export class SidebarComponent implements OnInit {
   menuItems: any[];
   isSidebarOpen: boolean = false;
@@ -39,7 +42,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
     this.checkScreenWidth();
-    
+    this.dropdown();
   }
 
   logout() {
@@ -61,4 +64,18 @@ export class SidebarComponent implements OnInit {
       }
     });
   }
+
+  dropdown() {
+  const dropdown = document.getElementsByClassName("dropdown-btn");
+  for (let i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      const dropdownContent = this.nextElementSibling;
+      const isOpen = dropdownContent.style.display === "block";
+      dropdownContent.style.display = isOpen ? "none" : "block";
+    });
+  }
 }
+
+}
+

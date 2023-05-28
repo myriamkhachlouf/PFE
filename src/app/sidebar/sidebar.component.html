@@ -8,77 +8,106 @@
     </div>
  
     <ul class="nav responsive-nav">
-      <li *ngIf="isMobileMenu()">
-        <a class="dropdown-toggle" data-toggle="dropdown">
-          <i class="fa fa-dashboard"></i>
-          <p class="hidden-lg hidden-md">Dashboard</p>
-        </a>
-      </li>
-      <li class="dropdown" *ngIf="isMobileMenu()">
-        <a class="dropdown-toggle" data-toggle="dropdown">
-          <i class="fa fa-globe"></i>
-          <b class="caret hidden-sm hidden-xs"></b>
-          <span class="notification hidden-sm hidden-xs">5</span>
-          <p class="hidden-lg hidden-md">
-            5 Notifications
-            <b class="caret"></b>
-          </p>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Notification 1</a></li>
-          <li><a href="#">Notification 2</a></li>
-          <li><a href="#">Notification 3</a></li>
-          <li><a href="#">Notification 4</a></li>
-          <li><a href="#">Another notification</a></li>
-        </ul>
-      </li>
-      <li *ngIf="isMobileMenu()">
-        <a>
-          <i class="fa fa-search"></i>
-          <p class="hidden-lg hidden-md">Search</p>
-        </a>
-      </li>
+  
+      
+    
       <li *ngIf="isMobileMenu()">
         <a href="http://localhost:4200/#/user">
           <p>Account</p>
         </a>
       </li>
-      <li class="dropdown" *ngIf="isMobileMenu()">
-        <a class="dropdown-toggle" data-toggle="dropdown">
-          <p>
-            Dropdown
-            <b class="caret"></b>
-          </p>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
-      </li>
+  
       <li *ngIf="isMobileMenu()">
         <a (click)="logout()">
           <p>Logout</p>
         </a>
       </li>
-  
+   
       <li class="separator hidden-lg hidden-md" *ngIf="isMobileMenu()"></li>
-      <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
-        <a [routerLink]="[menuItem.path]">
-          <i class="{{menuItem.icon}}"></i>
-          <p>{{menuItem.title}}</p>
-          
+      
+      <li routerLinkActive="active">
+        <a routerLink="/home">
+          <i class="pe-7s-home"></i>
+          <p>Home</p>
         </a>
-        <button class="sidebar-toggle" (click)="toggleSidebar()">
-          <i class="fa fa-bars"></i>
-        </button>
-        
       </li>
       
+      <li routerLinkActive="active">
+        <a routerLink="/dashboard">
+          <i class="pe-7s-graph"></i>
+          <p>General Dashboard</p>
+        </a>
+      </li>
+      
+      <li routerLinkActive="active">
+        <a routerLink="/deals">
+          <i class="pe-7s-note2"></i>
+          <p>Sales Deals</p>
+        </a>
+      </li>
+      <li >
+
+        <a>
+          <button class="dropdown-btn" (click)="dropdown()" >CUSTOMERS
+            <i class="pe-7s-users"></i>
+          </button>
+          <div class="dropdown-container" routerLinkActive="active">
+         
+            <li>
+              <a [routerLink]="'/table'">
+                <i class="pe-7s-id"></i>
+                <p>Customers info</p>
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="'/customersatisfaction'">
+                <i class="pe-7s-smile"></i>
+                <p>Customer Satisfaction</p>
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="'/maps'">
+                <i class="pe-7s-map-2"></i>
+                <p>World Wide Customers</p>
+              </a>
+            </li>
+          </div>
+        </a>
+      </li>
+      
+      <!-- Repeat the same structure for other items you want to display -->
+      
+      <li routerLinkActive="active">
+        <a routerLink="/Monitary">
+          <i class="pe-7s-cash"></i>
+          <p>Monitary Details</p>
+        </a>
+      </li>
+      
+      <li routerLinkActive="active">
+        <a routerLink="/notifications">
+          <i class="pe-7s-target"></i>
+          <p>Employee Tracking</p>
+        </a>
+      </li>
+      
+      <li routerLinkActive="active">
+        <a routerLink="/user">
+          <i class="pe-7s-user"></i>
+          <p>User Profile</p>
+        </a>
+      </li>
+      
+      <li routerLinkActive="active" class="active-pro">
+        <a routerLink="/Competitor">
+          <i class="pe-7s-look"></i>
+          <p>View on the market</p>
+        </a>
+      </li>
+      
+   
+      
     </ul>
+    
   </div>
   

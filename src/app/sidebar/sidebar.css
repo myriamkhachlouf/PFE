@@ -72,8 +72,6 @@
   background: none;
   width:100%;
   text-align: left;
-  left: 20px;
-  z-index: 999;
   background-color: transparent;
   border: none;
   color: #fff;
@@ -83,7 +81,11 @@
   line-height: 30px;
   font-size: 12px;
   font-weight: 600;
-    text-transform: uppercase;
+  text-transform: uppercase;
+  transform: scale(1.1);
+  top: 20px;
+
+
 }
 
 /* On mouse-over */
@@ -99,8 +101,3 @@
   display: none;
 }
 
-/* Optional: Style the caret down icon */
-.fa-caret-down {
-  float: right;
-  padding-right: 8px;
-}

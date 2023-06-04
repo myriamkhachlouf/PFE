@@ -30,8 +30,9 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  
     this.showLoader();
-    var divElement = document.getElementById('viz1683553713815');
+    var divElement = document.getElementById('viz1685892059179');
     var vizElement = divElement.getElementsByTagName('object')[0];
     if (divElement.offsetWidth > 800) {
       vizElement.style.width = '1200px';

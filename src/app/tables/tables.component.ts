@@ -17,7 +17,7 @@ export class TablesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() : void {
-    var divElement = document.getElementById('viz1684328193417');
+    var divElement = document.getElementById('viz1685616279082');
     var vizElement = divElement.getElementsByTagName('object')[0];
     if (divElement.offsetWidth > 800) {
       vizElement.style.width = '1200px';

@@ -29,26 +29,34 @@ export class LoginComponent implements OnInit {
   handleFormSubmit(event: Event): void {
     event.preventDefault();
 
-    grecaptcha.enterprise.ready(() => {
-      grecaptcha.enterprise.execute('6Ld-IBsmAAAAAJuvC4nyQYesf8484kE9nrDmyUgG', { action: 'login' }).then((token) => {
-        const templateParams = {
-          username: this.username,
-          email: this.email,
-          password: this.password,
-          recaptchaToken: token // Include the captcha token in the template params
-        };
-        this.router.navigate(['/home']);
-        // Send the email using EmailJS
-        emailjs.send('service_4p0e3wq', 'template_6pfrbr9', templateParams,'lKDAsysENoLDgOq6v')
-          .then((response: EmailJSResponseStatus) => {
-            console.log('Email sent successfully', response);
-            this.router.navigate(['/home']);
-          })
-          .catch((error) => {
-            console.error('Failed to send email:', error);
-          });
+    if (this.password !== '0000') {
+      alert('Wrong password.');
+      return;
+    } else {
+      grecaptcha.enterprise.ready(() => {
+        grecaptcha.enterprise.execute('6Ld-IBsmAAAAAJuvC4nyQYesf8484kE9nrDmyUgG', { action: 'login' }).then((token) => {
+          const templateParams = {
+            username: this.username,
+            email: this.email,
+            password: this.password,
+            recaptchaToken: token // Include the captcha token in the template params
+          };
+          this.router.navigate(['/home']);
+          // Send the email using EmailJS
+          emailjs.send('service_4p0e3wq', 'template_6pfrbr9', templateParams,'lKDAsysENoLDgOq6v')
+            .then((response: EmailJSResponseStatus) => {
+              console.log('Email sent successfully', response);
+              this.router.navigate(['/home']);
+            })
+            .catch((error) => {
+              console.error('Failed to send email:', error);
+            });
+        });
       });
-    });
+
+    }
+
+    
   }
 
   login(): void {
